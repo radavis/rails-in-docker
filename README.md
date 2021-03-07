@@ -48,6 +48,15 @@ you're now at
 [this step](https://guides.rubyonrails.org/v5.2/getting_started.html#say-hello-rails)
 in the "Getting Started with Rails" guide.
 
+```bash
+$ dc run web \
+    rails generate controller Welcome index
+```
+
+wow. the official tutorial for rails on the docker website doesn't work.
+
+the promise of a better world through containerization has yet to be realized.
+
 ## Resources
 
 * [docker/awesome-compose](https://github.com/docker/awesome-compose#readme)
