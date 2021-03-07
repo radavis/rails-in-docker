@@ -1,24 +1,53 @@
-# README
+# rails-in-docker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[[source](https://docs.docker.com/compose/rails/)]
 
-Things you may want to cover:
+create an alias for `docker-compose`
 
-* Ruby version
+```bash
+$ alias dc="docker-compose"
+```
 
-* System dependencies
+build the project
 
-* Configuration
+```bash
+$ dc run --no-deps web rails new . --force --database=postgresql
+```
 
-* Database creation
+fix permissions
 
-* Database initialization
+```bash
+$ sudo chown -R $USER:$USER .
+```
 
-* How to run the test suite
+build again
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+$ dc build
+```
 
-* Deployment instructions
+update `config/database.yml` with `host: db` and `password: password`, then boot it
 
-* ...
+```bash
+$ dc up
+$ dc down  # when you need to take the system down
+```
+
+setup the database
+
+```bash
+$ dc run web \
+    rails db:create
+```
+
+visit <http://localhost:3000>
+
+subsequent commands to the `web` service should be prefixed with `dc run web`
+
+you're now at
+[this step](https://guides.rubyonrails.org/v5.2/getting_started.html#say-hello-rails)
+in the "Getting Started with Rails" guide.
+
+## Resources
+
+* [docker/awesome-compose](https://github.com/docker/awesome-compose#readme)
