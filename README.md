@@ -57,6 +57,8 @@ wow. the official tutorial for rails on the docker website doesn't work.
 
 the promise of a better world through containerization has yet to be realized.
 
+why tf am i having to futz with file permissions?
+
 ## Resources
 
 * [docker/awesome-compose](https://github.com/docker/awesome-compose#readme)
